@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="../xsl/interro-print.xsl" type="text/xsl"?>
+<?xml-model href="interro.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<?xml-stylesheet href="css/style.css" type="text/css"?>
+<interro 
+    auteur="Martin Boudreau" 
+    creation="2022-09-30" 
+    modification="2022-09-30" 
+    version="0.0" 
+    titre="Titre du interro" 
+    sous-titre="Sous-titre du interro"
+    xmlns="https://bobanum.github.io/interro"
+    xmlns:h="http://www.w3.org/1999/xhtml">
+    <entete><h:h1>On peut mettre du HTML ici</h:h1></entete>
+    <pied>On peut mettre du HTML ici</pied>
+    <inter>Ce HTML sera placé entre chaque question ou section</inter>
+    <section titre="" sous-titre="">
+        <entete>On peut mettre du HTML ici pour la section</entete>
+        <pied>On peut mettre du HTML ici pour la section</pied>
+        <inter>Ce HTML sera placé entre chaque question</inter>
+        <question type="courte" libele="Qui est Napoléon ?">
+            <libele>Quelle <h:b>était la couleur</h:b> du cheval <h:i>blanc</h:i> de Napoléon?</libele>
+            <description>Du HTML complémentaire</description>
+            <solutions>
+                <solution casse="false" espaces="false">Blanc</solution>
+                <solution><script>alert();return true;</script></solution>
+            </solutions>
+        </question>
+        <question type="courte">
+            <libele>Quelle était la couleur du cheval blanc de Napoléon?</libele>
+            <description>Du HTML complémentaire</description>
+            <solutions>
+                <solution casse="false" espaces="false">Blanc</solution>
+                <solution><script>alert();return true;</script></solution>
+            </solutions>
+        </question>
+    </section>
+</interro>

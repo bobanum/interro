@@ -1,0 +1,15 @@
+.edit {
+  --espacement: .25em;
+  background-color: whitesmoke;
+  color: #444;
+  margin: 1em;
+}
+.edit > form {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  padding: var(--espacement);
+  gap: var(--espacement);
+}
+.edit > form > div {
+  display: contents;
+}/*# sourceMappingURL=edit.css.map */

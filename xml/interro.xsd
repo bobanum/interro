@@ -1,0 +1,69 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" xmlns:z="https://bobanum.github.io/interro" targetNamespace="https://bobanum.github.io/interro"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="script" type="xs:string"/>
+    <xs:element name="solution">
+        <xs:complexType mixed="true">
+            <xs:sequence>
+                <xs:element ref="z:script" maxOccurs="1" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="casse" use="optional"/>
+            <xs:attribute type="xs:string" name="espaces" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="libele" type="z:html"></xs:element>
+    <xs:complexType name="html" mixed="true">
+        <xs:sequence>
+            <xs:any namespace="http://www.w3.org/1999/xhtml" maxOccurs="unbounded" minOccurs="0" processContents="lax"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="description" type="z:html"/>
+    <xs:element name="solutions">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="z:solution" maxOccurs="unbounded" minOccurs="1"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="entete" type="z:html"/>
+    <xs:element name="pied" type="z:html"/>
+    <xs:element name="inter" type="z:html"/>
+    <xs:element name="question">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="z:libele"/>
+                <xs:element ref="z:description" maxOccurs="1"/>
+                <xs:element ref="z:solutions"/>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="type" use="optional"/>
+            <xs:attribute type="xs:string" name="libele" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="section">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="z:entete" maxOccurs="1"/>
+                <xs:element ref="z:pied" maxOccurs="1"/>
+                <xs:element ref="z:inter" maxOccurs="1"/>
+                <xs:element ref="z:question" maxOccurs="unbounded" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="titre"/>
+            <xs:attribute type="xs:string" name="sous-titre" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="interro">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="z:entete" maxOccurs="1"/>
+                <xs:element ref="z:pied" maxOccurs="1"/>
+                <xs:element ref="z:inter" maxOccurs="1"/>
+                <xs:element ref="z:section" maxOccurs="unbounded" minOccurs="1"/>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="auteur"/>
+            <xs:attribute type="xs:string" name="creation"/>
+            <xs:attribute type="xs:date" name="modification"/>
+            <xs:attribute type="xs:float" name="version"/>
+            <xs:attribute type="xs:string" name="titre"/>
+            <xs:attribute type="xs:string" name="sous-titre" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
