@@ -6,6 +6,12 @@ export default class App {
         })
     }
     static main() {
+
+        Promise.all([this.loadXML("../xml/interro.xsd"), this.loadXML("../xsl/xsd-form.xsl")]).then(data => {
+            var [xml, xsl] = data;
+            document.body.appendChild(this.process(xml, xsl));
+        });
+        return;
         Promise.all([this.loadXML("../xml/premierinterro.xml"), this.loadXML("../xsl/interro-edit.xsl"), this.loadXML("../xsl/interro-print.xsl")]).then(data => {
             console.log(data);
             var [xml, xslEdit, xslPrint] = data;

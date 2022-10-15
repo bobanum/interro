@@ -7,14 +7,17 @@
     <xsl:template match="z:interro">
         <div class="interro edit">
             <form>
-                <xsl:apply-templates select="@titre"/>
-                <xsl:apply-templates select="@sous-titre"/>
-                <xsl:apply-templates select="z:entete"/>
-                <xsl:apply-templates select="z:pied"/>
-                <xsl:apply-templates select="z:inter"/>
+                <xsl:call-template name="titre"/>
+                <!-- <xsl:call-template name="sous-titre" select="@sous-titre"/> -->
+                <!-- <xsl:call-template name="entete" select="z:entete"/> -->
+                <!-- <xsl:call-template name="pied" select="z:pied"/> -->
+                <!-- <xsl:call-template name="inter" select="z:inter"/> -->
                 <!-- <xsl:apply-templates select="section"/> -->
             </form>
         </div>
+    </xsl:template>
+    <xsl:template name="titre">
+        <xsl:value-of select="name(.)"></xsl:value-of>
     </xsl:template>
     <xsl:template match="@titre">
         <div>

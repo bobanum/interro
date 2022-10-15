@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128" height="128" version="1.1" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+ <g fill-rule="evenodd">
+  <path d="m64 0c-35.2 0-64 28.8-64 64s28.8 64 64 64c4.38 0 8.66-0.456 12.8-1.31v-26.4c-4 1.39-8.3 2.15-12.8 2.15-21.4 0-38.4-17-38.4-38.4s17-38.4 38.4-38.4c11.9 0 22.5 5.32 29.5 13.7 5.54 6.65 8.86 15.2 8.86 24.7 0 4.5-0.758 8.8-2.15 12.8h26.4c0.85-4.14 1.31-8.42 1.31-12.8 0-35.2-28.8-64-64-64z" color="#000000" color-rendering="auto" dominant-baseline="auto" fill="#c03" image-rendering="auto" shape-rendering="auto" solid-color="#000000" stop-color="#000000" style="font-feature-settings:normal;font-variant-alternates:normal;font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;font-variant-position:normal;font-variation-settings:normal;inline-size:0;isolation:auto;mix-blend-mode:normal;shape-margin:0;shape-padding:0;text-decoration-color:#000000;text-decoration-line:none;text-decoration-style:solid;text-indent:0;text-orientation:mixed;text-transform:none;white-space:normal"/>
+  <path d="m89.6 64a25.6 25.6 0 0 1-25.6 25.6 25.6 25.6 0 0 1-25.6-25.6 25.6 25.6 0 0 1 25.6-25.6 25.6 25.6 0 0 1 25.6 25.6z" fill="#ff8000" stop-color="#000000" style="font-variation-settings:normal;paint-order:markers stroke fill"/>
+ </g>
+</svg>
