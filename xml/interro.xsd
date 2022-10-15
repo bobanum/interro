@@ -4,66 +4,56 @@
 
     <xs:simpleType name="version-type">
         <xs:restriction base="xs:string">
-            <xs:pattern value="[0-9]+\.[0-9]+\.[0-9]+"/>
+            <xs:pattern value="[0-9]+\.[0-9]+\.[0-9]+">
+                <xs:annotation>
+                    <xs:documentation>9.9.9</xs:documentation>
+                </xs:annotation>
+            </xs:pattern>
         </xs:restriction>
     </xs:simpleType>
-    <xs:element name="script" type="xs:string"/>
-    <xs:element name="solution">
-        <xs:complexType mixed="true">
-            <xs:sequence>
-                <xs:element ref="z:script" maxOccurs="1" minOccurs="0"/>
-            </xs:sequence>
-            <xs:attribute type="xs:string" name="casse" use="optional"/>
-            <xs:attribute type="xs:string" name="espaces" use="optional"/>
-        </xs:complexType>
-    </xs:element>
-    <xs:element name="libele" type="z:html"></xs:element>
+    <xs:complexType name="solution-type" mixed="true">
+        <xs:sequence>
+            <xs:element name="script" type="xs:string" maxOccurs="1" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute type="xs:string" name="casse" use="optional"/>
+        <xs:attribute type="xs:string" name="espaces" use="optional"/>
+    </xs:complexType>
     <xs:complexType name="html" mixed="true">
         <xs:sequence>
             <xs:any namespace="http://www.w3.org/1999/xhtml" maxOccurs="unbounded" minOccurs="0" processContents="lax"/>
         </xs:sequence>
     </xs:complexType>
-    <xs:element name="description" type="z:html"/>
-    <xs:element name="solutions">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element ref="z:solution" maxOccurs="unbounded" minOccurs="1"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-    <xs:element name="entete" type="z:html"/>
-    <xs:element name="pied" type="z:html"/>
-    <xs:element name="inter" type="z:html"/>
-    <xs:element name="question">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element ref="z:libele"/>
-                <xs:element ref="z:description" maxOccurs="1"/>
-                <xs:element ref="z:solutions"/>
-            </xs:sequence>
-            <xs:attribute type="xs:string" name="type" use="optional"/>
-            <xs:attribute type="xs:string" name="libele" use="optional"/>
-        </xs:complexType>
-    </xs:element>
-    <xs:element name="section">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element ref="z:entete" maxOccurs="1"/>
-                <xs:element ref="z:pied" maxOccurs="1"/>
-                <xs:element ref="z:inter" maxOccurs="1"/>
-                <xs:element ref="z:question" maxOccurs="unbounded" minOccurs="0"/>
-            </xs:sequence>
-            <xs:attribute type="xs:string" name="titre"/>
-            <xs:attribute type="xs:string" name="sous-titre" use="optional"/>
-        </xs:complexType>
-    </xs:element>
+    <xs:complexType name="solutions-type">
+        <xs:sequence>
+            <xs:element name="solution" type="z:solution-type" maxOccurs="unbounded" minOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="question-type">
+        <xs:sequence>
+            <xs:element name="libele" type="z:html"/>
+            <xs:element name="description" type="z:html" maxOccurs="1"/>
+            <xs:element name="solutions" type="z:solutions-type"/>
+        </xs:sequence>
+        <xs:attribute type="xs:string" name="type" use="optional"/>
+        <xs:attribute type="xs:string" name="libele" use="optional"/>
+    </xs:complexType>
+    <xs:complexType name="section-type">
+        <xs:sequence>
+            <xs:element name="entete" type="z:html" maxOccurs="1"/>
+            <xs:element name="pied" type="z:html" maxOccurs="1"/>
+            <xs:element name="inter" type="z:html" maxOccurs="1"/>
+            <xs:element name="question" type="z:question-type" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute type="xs:string" name="titre"/>
+        <xs:attribute type="xs:string" name="sous-titre" use="optional"/>
+    </xs:complexType>
     <xs:element name="interro">
         <xs:complexType>
             <xs:sequence>
-                <xs:element ref="z:entete" maxOccurs="1"/>
-                <xs:element ref="z:pied" maxOccurs="1"/>
-                <xs:element ref="z:inter" maxOccurs="1"/>
-                <xs:element ref="z:section" maxOccurs="unbounded" minOccurs="1"/>
+                <xs:element name="entete" type="z:html" maxOccurs="1"/>
+                <xs:element name="pied" type="z:html" maxOccurs="1"/>
+                <xs:element name="inter" type="z:html" maxOccurs="1"/>
+                <xs:element name="section" type="z:section-type" maxOccurs="unbounded" minOccurs="1"/>
             </xs:sequence>
             <xs:attribute type="xs:string" name="auteur">
                 <xs:annotation>
@@ -80,23 +70,9 @@
                     <xs:documentation>Date de modification</xs:documentation>
                 </xs:annotation>
             </xs:attribute>
-            <xs:attribute name="version">
+            <xs:attribute name="version" type="z:version-type">
                 <xs:annotation>
                     <xs:documentation>Version</xs:documentation>
-                </xs:annotation>
-                <xs:simpleType>
-                    <xs:restriction base="xs:string">
-                        <xs:pattern value="[0-9]+\.[0-9]+\.[0-9]+">
-                            <xs:annotation>
-                                <xs:documentation>9.9.9</xs:documentation>
-                            </xs:annotation>
-                        </xs:pattern>
-                    </xs:restriction>
-                </xs:simpleType>
-            </xs:attribute>
-            <xs:attribute name="version2" type="z:version-type">
-                <xs:annotation>
-                    <xs:documentation>Version2</xs:documentation>
                 </xs:annotation>
             </xs:attribute>
             <xs:attribute type="xs:string" name="titre">

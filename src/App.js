@@ -65,7 +65,11 @@ export default class App {
     }
     static process(xml, xsl) {
         var xsltProcessor = new XSLTProcessor();
-        xsltProcessor.importStylesheet(xsl);
+        try {
+            xsltProcessor.importStylesheet(xsl);
+        } catch (erreur) {
+            console.log(xsltProcessor);
+        }
         return xsltProcessor.transformToFragment(xml, document);
     }
     static loadXML(path) {
