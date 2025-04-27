@@ -86,8 +86,8 @@ A question is a statement or a problem that can be answered by a user. A questio
 | createdAt | `Date`         | Date of creation                                             |
 | updatedAt | `Date`         | Date of last update                                          |
 | remarks   | `string`       | Remarks about the question for later updates                 |
-| intro     | `string`       | Introduction text (html) displayed before the question       |
-| outro     | `string`       | Outro text (html) displayed after the question               |
+| details   | `string`       | Introduction text (html) displayed before the question       |
+| footer    | `string`       | Footer text (html) displayed after the question              |
 
 ### Question variant
 
@@ -108,11 +108,11 @@ A type of question. A question can have a type. A type can have a name and a des
 
 #### Properties
 
-| Name        | Type     | Description                           |
-| ----------- | -------- | ------------------------------------- |
-| id          | `string` | Unique identifier                     |
-| name        | `string` | Name of the question type             |
-| description | `string` | Description of the question type      |
+| Name        | Type     | Description                      |
+| ----------- | -------- | -------------------------------- |
+| id          | `string` | Unique identifier                |
+| name        | `string` | Name of the question type        |
+| description | `string` | Description of the question type |
 
 #### Features
 - Create/Edit form

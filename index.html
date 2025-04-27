@@ -6,18 +6,162 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
-    <script src="node_modules/tinymce/tinymce.js"></script>
-    <script>
-        tinymce.init({
-            selector: 'textarea'
-        });
-    </script>
+    <script type="module" src="./src/Question/index.js"></script>
+    <script type="module" src="./src/Solutions/index.js"></script>
     <script type="module">
-        import App from "./src/App.js";
+        // import App from "./src/App.js";
+        document.querySelectorAll("form.edition legend").forEach(element => {
+            element.addEventListener("click", event => {
+                event.preventDefault();
+                event.stopPropagation();
+                element.classList.toggle("hidden");
+            });
+        })
+        document.querySelectorAll("form.edition label").forEach(element => {
+            element.addEventListener("click", event => {
+                if (event.ctrlKey) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    element.classList.toggle("hidden");
+                }
+            });
+        })
     </script>
-    <title>Document</title>
+    <title>Interro</title>
 </head>
 
-<body></body>
+<body>
+    <section class="test">
+        <solutions-ponent></solutions-ponent>
+    </section>
+    <!-- <question-ponent></question-ponent> -->
+    <section class="online">
+        <h1>Online</h1>
+        <form class="online" action="">
+            <article class="question question-text" id="q-abcdef">
+                <figure>
+                    <img src="https://via.placeholder.com/300x60" alt="Placeholder">
+                </figure>
+                <header>
+                    <span class="number">1.</span>
+                    <div class="wording"><span class="points">(6 points)</span> Wording Tempore, natus nihil deserunt, magnam beatae eveniet possimus provident.</div>
+                </header>
+                <div class="body">
+                    <div class="details">
+                        <p>Details. Repudiandae, quisquam itaque recusandae praesentium reiciendis magnam, ex accusamus. </p>
+                        <ul>
+                            <li>Lorem, ipsum.</li>
+                            <li>Repellat, soluta.</li>
+                            <li>Odio, dolore?</li>
+                        </ul>
+                        <p>Blanditiis ipsum quas dolore ut amet culpa officia excepturi eaque!</p>
+                    </div>
+                    <div><input type="text" name="abcdef" id="abcdef"></div>
+                </div>
+                <footer>
+                    <div class="outro">Footer (REALLY optionnal).Quam ullam consequatur repellendus. Nemo!</div>
+                </footer>
+            </article>
+        </form>
+    </section>
+    <section class="print">
+        <h1>Print</h1>
+        <div class="print">
+            <article class="question question-text" id="q-abcdef">
+                <figure>
+                    <img src="https://via.placeholder.com/300x60" alt="Placeholder">
+                </figure>
+                <header>
+                    <span class="number">1.</span>
+                    <div class="wording"><span class="points">(6 points)</span> Wording Tempore, natus nihil deserunt, magnam beatae eveniet possimus provident.</div>
+                </header>
+                <div class="body">
+                    <div class="details">
+                        <p>Details. Repudiandae, quisquam itaque recusandae praesentium reiciendis magnam, ex accusamus. </p>
+                        <ul>
+                            <li>Lorem, ipsum.</li>
+                            <li>Repellat, soluta.</li>
+                            <li>Odio, dolore?</li>
+                        </ul>
+                        <p>Blanditiis ipsum quas dolore ut amet culpa officia excepturi eaque!</p>
+                    </div>
+                    <div class="answer box">
+                        <div class="answer-line"><span class="solution">Here is the solution (not printed)</span></div>
+                        <div class="answer-line"></div>
+                    </div>
+                </div>
+                <footer>
+                    <div class="outro">Footer (REALLY optional).Quam ullam consequatur repellendus. Nemo!</div>
+                </footer>
+            </article>
+        </div>
+    </section>
+    <section>
+        <h1>Edition</h1>
+        <form class="edition v2" action="" onsubmit="return false;">
+            <div class="field field-type">
+                <label for="type">Type</label>
+                <select name="type" id="type">
+                    <option value="text">Text</option>
+                    <option value="image">Image</option>
+                    <option value="video">Video</option>
+                </select>
+            </div>
+            <fieldset>
+                <legend>Identification</legend>
+                <div class="field field-id">
+                    <label for="id">ID</label>
+                    <input type="text" name="id" id="id" value="abcdef" readonly>
+                </div>
+                <div class="field field-title">
+                    <label for="title">Title</label>
+                    <input type="text" name="title" id="title" value="Title">
+                </div>
+                <div class="field field-value">
+                    <label for="value">Value</label>
+                    <input type="number" name="value" id="value" value="3">
+                </div>
+                <div class="field field-weight">
+                    <label for="weight">Default weight</label>
+                    <input type="number" name="weight" id="weight" min="0" step=".1" value="2">
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Question</legend>
+                <div class="field field-image">
+                    <label for="image">Image</label>
+                    <div>
+                        <input type="text" name="image" id="image" value="https://via.placeholder.com/300x60">
+                        <input type="file">
+                    </div>
+                </div>
+                <div class="field field-wording">
+                    <label for="wording">Wording</label>
+                    <textarea name="wording" id="wording" cols="30" rows="5">Wording Tempore, natus nihil deserunt, magnam beatae eveniet possimus provident.</textarea>
+                </div>
+                <div class="field field-details">
+                    <label for="details">Details</label>
+                    <textarea name="details" id="details" cols="30" rows="5">Details. Repudiandae, quisquam itaque recusandae praesentium reiciendis magnam, ex accusamus. </textarea>
+                </div>
+                <div class="field field-solutions">
+                    <label for="solutions">Solutions</label>
+                    <ul class="sortable">
+                        <li><input type="text" name="solution[]" id="solution[]" value="Lorem, ipsum."><input type="number" size="3" name="value[]" id="value[]"><button>➖︎</button></li>
+                        <li><input type="text" name="solution[]" id="solution[]" value="" placeholder="New Solution"><span></span><span>➕︎</span></li>
+                    </ul>
+                </div>
+            </fieldset>
+        </form>
+    </section>
+    <section>
+        <h1>Result</h1>
+        <form action="">
+            <div>
+    
+            </div>
+        </form>
+    </section>
+
+</body>
 
 </html>

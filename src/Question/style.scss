@@ -1,0 +1,96 @@
+article.question {
+	display: grid;
+
+	header {
+		display: grid;
+		grid-template-columns: 2ch 1fr;
+		justify-content: space-between;
+		margin-bottom: 1em;
+		font-size: larger;
+	}
+
+	footer {
+		font-size: smaller;
+	}
+}
+
+form.online {
+	article.question {
+		.body input[type="text"] {
+			width: 100%;
+		}
+	}
+}
+
+div.print {
+	background-color: white;
+	color: black;
+	padding: 1em;
+
+	.answer {
+		margin-bottom: .25em;
+
+		.answer-line {
+			border-bottom: 1px solid black;
+			height: 1cm;
+			// background-color: aliceblue;
+			display: flex;
+			align-items: end;
+			padding: 0 .5ch;
+
+			.solution {
+				position: absolute;
+				color: red;
+
+				@media print {
+					display: none;
+				}
+			}
+		}
+
+		&.box {
+			border: 1px solid black;
+
+			.answer-line:last-child {
+				border-bottom: none;
+			}
+		}
+	}
+}
+
+form.edition,
+form.edition > fieldset {
+	display: grid;
+	gap: .5em;
+
+	&.v1 {
+		grid-template-columns: min-content 1fr;
+
+		> div {
+			display: contents;
+		}
+	}
+
+	&,
+	&.v2 {
+		grid-template-columns: 1fr;
+
+		> div {
+			display: grid;
+		}
+	}
+
+	fieldset:has(legend.hidden) {
+		legend ~ * {
+			display: none;
+		}
+	}
+
+	label.hidden {
+		border-bottom: 1px dotted white;
+
+		+ * {
+			display: none;
+		}
+	}
+}

@@ -1,0 +1,30 @@
+@charset "UTF-8";
+ul.sortable {
+  list-style-type: none;
+  padding-left: 0;
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+}
+ul.sortable button {
+  border: none;
+  background-color: transparent;
+  color: inherit;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+ul.sortable li {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: 1/-1;
+}
+ul.sortable li::before {
+  content: "⋮";
+  color: rgba(255, 255, 255, 0.6666666667);
+  text-shadow: 0 1px black;
+  width: 1ch;
+  cursor: ns-resize;
+}
+ul.sortable li:last-child::before {
+  content: "";
+}

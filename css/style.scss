@@ -4,34 +4,22 @@ html {
     background-color: #444444;
     color: white;
 }
+
 body {
     height: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 1em;
+    gap: 1em;
+}
+section {
+    padding: 1em;
+    background-color: #666;
+    border-radius: 1em;
 }
 * {
     margin: 0;
     box-sizing: border-box;
 }
-section {
-    border: 5px solid red;
-    margin: 1em;
-}
-article {
-    border: 5px solid yellow;
-    margin: 1em;
-}
-header, footer {
-    border: 5px solid blue;
-    background-color: #eef;
-}
-header {
-    border-bottom: none;
-}
-footer {
-    border-top: none;
-}
-.libele {
-    border: 5px solid green;
-    background-color: #efe;
-    
-    
-}
+
+@import "../src/Question/style";
