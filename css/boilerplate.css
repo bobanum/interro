@@ -1,0 +1,23 @@
+
+html {
+    font-size: 16px;
+    font-family: var(--font-text);
+    /* font-weight: 100; */
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    color: #333;
+    background-color: #f4f4f4;
+}
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 900;
+    /* font-stretch: 75%; */
+}

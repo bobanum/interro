@@ -1,0 +1,23 @@
+#preview {
+    grid-area: preview;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 1em;
+    border: 1px solid #ccc;
+    overflow-y: auto;
+
+    >* {
+        &::before {
+            background-color: #666;
+            font-size: smaller;
+            color: #fff;
+            text-align: center;
+            position: absolute;
+            margin-left: .5em;
+            margin-top: -.6em;
+            padding: 0 1em;
+            border-radius: 1em;
+        }
+    }
+}

@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap');
+:root {
+    --h: 210;
+    --s: 100%;
+    --l: 50%;
+    --d: 20%;
+    --primary: hsl(var(--h), var(--s), var(--l));
+}
+@media screen and (prefers-color-scheme: dark) {
+    :root {
+        --h: 210;
+        --s: 100%;
+        --l: 20%;
+        --d: 10%;
+        --primary: hsl(var(--h), var(--s), var(--l));
+        --font-text: 'Roboto', sans-serif;
+    }
+}

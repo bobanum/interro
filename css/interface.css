@@ -1,0 +1,26 @@
+#interface {
+    display: grid;
+    grid-template-areas: 
+        "header header"
+        "preview form";
+    >header, >footer {
+        background-color: #e0e0e0;
+        padding: 10px;
+        text-align: center;
+    }
+    >header {
+        grid-area: header;
+    }
+    #preview {
+        grid-area: preview;
+    }
+    >form {
+        grid-area: form;
+    }
+    @media (width < 600px) {
+        grid-template-areas: 
+        "header"
+        "preview"
+        "form";
+    }
+}
