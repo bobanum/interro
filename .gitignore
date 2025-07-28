@@ -1,0 +1,7 @@
+/vendor/
+/models/
+/traits/
+/node_modules/
+/.sessions
+/database/*.sqlite
+.env
