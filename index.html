@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.svg" type="image/svg+xml">
+    <title>Document</title>
+    <script type="module">
+        import Api from './Api.js';
+        // console.log(document.cookie);
+        // throw new Error('This is a test error');
+        Api.app_key = '77b83e64c9a39c4b0f1f0f3b5dadd712';
+        Api.url = 'http://localhost:9999';
+        Api.fetch('questionnaire').then(data => {
+            if (data) {
+                let pre = document.body.appendChild(document.createElement('pre'));
+                pre.innerHTML = JSON.stringify(data, null, 2);
+            }
+        }).catch(error => {
+            console.error('Error fetching data:', error);
+            document.body.innerHTML = `<h1>Error fetching data</h1>`;
+        });
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
