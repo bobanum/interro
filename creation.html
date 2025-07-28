@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+</head>
+
+<body>
+    <div id="interface">
+        <header>
+            <h1><img style="height: 1.2em;" src="img/favicon.svg" alt="">Kweez - Création</h1>
+        </header>
+        <form action="">
+            <div class="group">
+                <div class="column short">
+                    <label for="type">Type</label>
+                    <select name="type" id="type">
+                        <option value="question">Question</option>
+                        <option value="short">Short</option>
+                        <option value="choice">Choice</option>
+                        <option value="essay">Essay</option>
+                    </select>
+                </div>
+                <div class="column short">
+                    <label>
+                        <label for="advanced"><input type="checkbox" name="advanced" id="advanced"> Advanced</label>
+                        <label for="extras"><input type="checkbox" name="extras" id="extras"> Extras</label>
+                    </label>
+                </div>
+            </div>
+            <fieldset>
+                <div class="column extra">
+                    <label for="pre">Pre</label>
+                    <textarea class="html" name="pre" id="pre" rows="3"></textarea>
+                </div>
+                <div class="column basic">
+                    <label for="title">Title</label>
+                    <input type="text" name="title" id="title" maxlength="250" value="Quelle était la couleur du cheval blanc de Napoléon ?">
+                </div>
+                <div class="column basic">
+                    <label for="wording">Wording</label>
+                    <textarea class="html" name="wording" id="wording" rows="5" maxlength="500"></textarea>
+                </div>
+                <div class="column basic">
+                    <label for="solution">Solution</label>
+                    <textarea class="html" name="solution" id="solution" rows="5" maxlength="500">Blanc</textarea>
+                </div>
+                <div class="column extra">
+                    <label for="data">Data</label>
+                    <input type="text" name="data" id="data" maxlength="500">
+                </div>
+                <div class="column extra">
+                    <label for="post">Post</label>
+                    <textarea class="html" name="post" id="post" rows="3"></textarea>
+                </div>
+                <div class="column extra">
+                    <label for="style">Style</label>
+                    <textarea class="html" name="style" id="style" rows="3"></textarea>
+                </div>
+                <div class="column basic">
+                    <label for="value">Value</label>
+                    <input type="number" name="value" id="value" min="0" max="100">
+                </div>
+                <div class="group">
+                    <div class="column advanced short">
+                        <label for="importance">Importance</label>
+                        <select name="importance" id="importance">
+                            <option value="1">Very Low</option>
+                            <option value="2">Low</option>
+                            <option value="3" selected>Medium</option>
+                            <option value="4">High</option>
+                            <option value="5">Very High</option>
+                        </select>
+                    </div>
+                    <div class="column advanced short">
+                        <label for="difficulty">Difficulty</label>
+                        <select name="difficulty" id="difficulty">
+                            <option value="1">Very Easy</option>
+                            <option value="2">Easy</option>
+                            <option value="3" selected>Medium</option>
+                            <option value="4">Hard</option>
+                            <option value="5">Very Hard</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="column advanced short">
+                    <label for="duration">Duration</label>
+                    <input type="number" name="duration" id="duration" min="0" max="1200" value="60">
+                </div>
+                <div class="group">
+                    <div class="column advanced">
+                        <label for="keywords">Keywords</label>
+                        <input type="text" name="keywords" id="keywords" maxlength="250">
+                    </div>
+                    <div class="column advanced">
+                        <label for="categories">Categories</label>
+                        <input type="text" name="categories" id="categories" maxlength="250">
+                    </div>
+
+                </div>
+            </fieldset>
+            <div class="actions">
+                <button type="submit">Create</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+        <div id="preview">
+            <section class="web">
+                <article class="question">
+                    <header><span class="number">1</span><span class="value">10</span>
+                        <div class="title">Quelle était la couleur du cheval blanc de Napoléon ?</div>
+                    </header>
+                    <div class="answer"><input type="text"></div>
+                </article>
+            </section>
+            <section class="print">
+                <article class="question">
+                    <header><span class="number">1</span><span class="value">10</span>
+                        <div class="title">Quelle était la couleur du cheval blanc de Napoléon ?</div>
+                    </header>
+                    <div class="answer"><span class="solution">Blanc</span></div>
+                </article>
+            </section>
+        </div>
+    </div>
+</body>
+
+</html>
