@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "remark-flow-plugin": "^1.0.2",
+    "remark-toc": "^9.0.0"
+  }
+}

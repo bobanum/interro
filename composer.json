@@ -1,0 +1,23 @@
+{
+    "repositories": [
+        {
+            "type": "path",
+            "url": "~/Github/Github_bobanum/oauth-tim",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "~/Github/Github_bobanum/RestInPeace",
+            "options": {
+                "symlink": true
+            }
+        }
+    ],
+    "require": {
+        "bobanum/oauth2025": "*",
+        "bobanum/restinpeace": "dev-main"
+    },
+    "minimum-stability": "dev"
+}
